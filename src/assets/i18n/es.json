@@ -1,0 +1,24 @@
+{
+  "global": {
+    "home": "Home",
+    "author": "Autor",
+    "legal": "Legal",
+    "clients": "Clientes",
+    "filters": "Filtros",
+    "see_deleted": "Ver borrados",
+    "not_see_deleted": "Ocultar borrados",
+    "ok": "Guardar",
+    "cancel": "Cancelar",
+    "filter_dealers": "Filtrar Dealers",
+    "filter_locations": "Filtrar Localidades",
+    "client_info": "Nuevo Cliente",
+    "client_name_label": "Nombre",
+    "client_name_placeholder": "Nombre del cliente",
+    "client_car_brand_label": "Marca",
+    "client_car_brand_placeholder": "Marca del auto",
+    "client_car_model_label": "Modelo",
+    "client_car_model_placeholder": "Modelo del auto",
+    "client_location_label": "Localidad",
+    "client_dealer_label": "Dealer"
+  }
+}

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">{{'global.cancel' | translate}}</ion-button>
+    </ion-buttons>
+    <ion-title>{{'global.client_info' | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">{{'global.ok' | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input labelPlacement="floating" label="{{'global.client_name_label' | translate}}" [(ngModel)]="name" placeholder="{{'global.client_name_placeholder' | translate}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating" label="{{'global.client_car_brand_label' | translate}}" [(ngModel)]="brand" placeholder="{{'global.client_car_brand_placeholder' | translate}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating" label="{{'global.client_car_model_label' | translate}}" [(ngModel)]="model" placeholder="{{'global.client_car_model_placeholder' | translate}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="{{'global.client_dealer_label' | translate}}" label-placement="floating" [(ngModel)]="dealer">
+        <ion-select-option value="{{dealer.name}}" *ngFor="let dealer of dealerList">{{dealer.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

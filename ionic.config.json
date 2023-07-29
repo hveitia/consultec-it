@@ -1,0 +1,10 @@
+{
+  "name": "consultec-cars",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "java": {
+    "version": 17
+  }
+}

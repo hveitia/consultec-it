@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="reader-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{'global.home' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-list-header>
+      <ion-label><strong>{{'global.filters' | translate}}</strong></ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-select [label]="filterLocationsHeaderText" label-placement="floating" [multiple]="true">
+        <ion-select-option value="apple" *ngFor="let city of citiesList">{{city.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select [label]="filterDealersHeaderText" label-placement="floating" [multiple]="true">
+        <ion-select-option value="apple" *ngFor="let dealer of dealersList">{{dealer.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="full">
+    <ion-list-header>
+      <ion-label><strong>{{'global.clients' | translate}}</strong></ion-label>
+      <ion-button *ngIf="!showingDeleted">{{'global.see_deleted' | translate}}</ion-button>
+      <ion-button *ngIf="showingDeleted">{{'global.not_see_deleted' | translate}}</ion-button>
+    </ion-list-header>
+    <ion-item-sliding *ngFor="let client of clientsList">
+    <ion-item>
+      <ion-label>{{client.name}}</ion-label>
+      <ion-item-options>
+        <ion-item-option><i class="fas fa-edit fa-lg" slot="end"></i></ion-item-option>
+        <ion-item-option color="danger"><i class="fas fa-trash fa-lg" slot="end"></i></ion-item-option>
+      </ion-item-options>
+    </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button id="add-client-alert" (click)="openModal()">
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
