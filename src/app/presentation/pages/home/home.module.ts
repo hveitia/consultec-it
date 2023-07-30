@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import {TranslateModule} from "@ngx-translate/core";
 import {AddClientComponent} from "../../components/add-client/add-client.component";
+import {DetailClientComponent} from "../../components/detail-client/detail-client.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import {AddClientComponent} from "../../components/add-client/add-client.compone
     HomePageRoutingModule,
     TranslateModule,
   ],
-  declarations: [HomePage, AddClientComponent,]
+  declarations: [HomePage, AddClientComponent, DetailClientComponent]
 })
 export class HomePageModule {}

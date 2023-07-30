@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {AuthorPageRoutingModule} from "./author-routing.module";
 import {AuthorPage} from "./author.page";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {AuthorPage} from "./author.page";
     IonicModule,
     CommonModule,
     FormsModule,
-    AuthorPageRoutingModule
+    AuthorPageRoutingModule,
+    TranslateModule
   ],
   declarations: [AuthorPage]
 })

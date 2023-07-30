@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LEGAL} from "../../../app.constants";
 
 @Component({
   selector: 'app-legal',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class LegalPage {
 
+  legalText = LEGAL;
   constructor() {}
 
 }

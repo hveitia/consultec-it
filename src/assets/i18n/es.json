@@ -7,11 +7,14 @@
     "filters": "Filtros",
     "see_deleted": "Ver borrados",
     "not_see_deleted": "Ocultar borrados",
-    "ok": "Guardar",
+    "ok": "Ok",
+    "save": "Guardar",
     "cancel": "Cancelar",
     "filter_dealers": "Filtrar Dealers",
     "filter_locations": "Filtrar Localidades",
-    "client_info": "Nuevo Cliente",
+    "client_add_header": "Nuevo Cliente",
+    "client_edit_header": "Editar Cliente",
+    "client_info": "Detalles del Cliente",
     "client_name_label": "Nombre",
     "client_name_placeholder": "Nombre del cliente",
     "client_car_brand_label": "Marca",
@@ -19,6 +22,10 @@
     "client_car_model_label": "Modelo",
     "client_car_model_placeholder": "Modelo del auto",
     "client_location_label": "Localidad",
-    "client_dealer_label": "Dealer"
+    "client_dealer_label": "Dealer",
+    "delete_client_title": "Eliminar Cliente",
+    "delete_client_text": "¿Está seguro que desea eliminar este cliente?",
+    "no": "No",
+    "yes": "Si"
   }
 }

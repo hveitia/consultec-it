@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import {HomeViewModelMediator} from "../../services/mediators/home-viemodel-mediator";
 import {HomeService} from "../../services/home.service";
 import {Dealer} from "../../../core/entities/dealer";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-add-client',
@@ -16,13 +17,30 @@ export class AddClientComponent implements OnInit{
   model: string = '';
   dealer: string = '';
   dealerList: Dealer[] = [];
+  title: string = '';
 
   get viewModel(): HomeViewModelMediator {
     return this.homeService.viewModel;
   }
 
-  constructor(private modalCtrl: ModalController,  private homeService: HomeService,) {
+  constructor(
+    private modalCtrl: ModalController,
+    private homeService: HomeService,
+    private translate: TranslateService
+    ) {}
 
+  ngOnInit(): void {
+    this.viewModel.$headquarter.value.cities.forEach((city) => {
+      this.dealerList = [...this.dealerList, ...city.dealers];
+    });
+    if(this.viewModel.$editing.value){
+      this.name = this.viewModel.$editingClient.value.name;
+      this.brand = this.viewModel.$editingClient.value.carBrand;
+      this.model = this.viewModel.$editingClient.value.carModel;
+      this.title = this.translate.instant('global.client_edit_header');
+    }else{
+      this.title = this.translate.instant('global.client_add_header');
+    }
   }
 
   cancel() {
@@ -30,7 +48,7 @@ export class AddClientComponent implements OnInit{
   }
 
   confirm() {
-    if (this.name !== '' && this.brand !== '' && this.model !== '' && this.dealer !== '') {
+    if (this.name !== '' && this.brand !== '' && this.model !== '') {
       return this.modalCtrl.dismiss({
         name: this.name,
         brand: this.brand,
@@ -42,11 +60,5 @@ export class AddClientComponent implements OnInit{
       return;
     }
 
-  }
-
-  ngOnInit(): void {
-    this.viewModel.$headquarter.value.cities.forEach((city) => {
-      this.dealerList = [...this.dealerList, ...city.dealers];
-    });
   }
 }
